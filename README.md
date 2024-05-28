@@ -9,6 +9,8 @@ Everyone's seen something similar in python/numpy but trust me autodiff is way m
 
 <img src="./images/haskell.png" width="500px"></img>
 
+I named this microhaskell after karpathy's [micrograd](https://github.com/karpathy/micrograd).
+
 ## Overview
 
 Modules:
@@ -54,8 +56,8 @@ You'll need to have Haskell and `cabal` installed:
 
 ### 1. Clone the repo
 ```
-git clone https://github.com/milton-l/Neural-Network-Training-Haskell.git
-cd Neural-Network-Training-Haskell
+git clone https://github.com/milton-l/microhaskell.git
+cd microhaskell
 ```
 
 ### 2. Build the project
