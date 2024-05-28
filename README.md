@@ -5,7 +5,7 @@ The focus is on building everything from scratch, including autodiff and gradien
 
 There aren't many examples online on coding neural nets in Haskell, and the ones I found either use [full-fledged frameworks](https://hackage.haskell.org/package/neural) or are too basic and don't apply autodiff + backprop. I wanted a simple yet complete implementation so here's this.
 
-Everyone's seen something similar in python/numpy but trust me backprop is way more elegant in Haskell.
+Everyone's seen something similar in python/numpy but trust me autodiff is way more elegant in Haskell.
 
 <img src="./images/haskell.png" width="500px"></img>
 
