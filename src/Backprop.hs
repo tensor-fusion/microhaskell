@@ -3,7 +3,6 @@
 
 module Backprop (backprop, updateParams) where
 
--- import ActivationFunctions
 import AutoDiff
 import Data.List (transpose)
 import LinearAlgebra
