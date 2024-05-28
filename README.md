@@ -1,4 +1,4 @@
-# Neural network training in Haskell
+# Autodiff + neural network training in Haskell
 
 This code shows how to implement and train a very simple feedforward neural net in Haskell.
 The focus is on building everything from scratch, including autodiff and gradient descent / backprop training code. There are zero frameworks/libs used.
