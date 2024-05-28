@@ -105,3 +105,5 @@ You are free to do whatever you want with this. If you spot bugs, want to experi
 
 ## TODO
 - [ ] Leverage `Dual` diff for derivatives instead of explicitly formulating them.
+- [ ] More complex nets/datasets (e.g. MNIST).
+- [ ] Viz
