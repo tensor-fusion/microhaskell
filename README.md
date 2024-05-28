@@ -50,8 +50,8 @@ You'll need to have Haskell and `cabal` installed:
 
 ### 1. Clone the repo
 ```
-git clone https://github.com/milton-l/nn-training-haskell.git
-cd nn-training-haskell
+git clone https://github.com/milton-l/Neural-Network-Training-Haskell.git
+cd Neural-Network-Training-Haskell
 ```
 
 ### 2. Build the project
