@@ -133,7 +133,7 @@ There might be bugs!
 
 ### Contributing
 
-You are free to do whatever you want with this. If you spot bugs, want to experiment and/or change stuff, etc. it might be best to fork the repo or just copy the code and change it on your own. I don't really have much time to review/accept PRs :)
+You are free to do whatever you want with this. If you spot bugs, want to experiment and/or change stuff, PRs are welcome! (although not guaranteed to be reviewed/accepted immediately). You can fork the repo or just copy the code and change it on your own as you please.
 
 ## TODO
 - [ ] Leverage `Dual` diff for derivatives instead of explicitly formulating them.
