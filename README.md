@@ -29,10 +29,7 @@ Modules:
 The neural net is the most basic FFN with just 2 layers (bare minimum to learn XOR).
 
 
-## Automatic differentiation approach
-
-### Dual numbers
-
+## Automatic differentiation approach - Dual numbers
 
 `Dual` numbers [simplify the gradient computation process](https://www.danielbrice.net/blog/automatic-differentiation-is-trivial-in-haskell/) since they store not only the value of a variable but also its derivative. More formally a `Dual` number is:
 
@@ -40,15 +37,49 @@ The neural net is the most basic FFN with just 2 layers (bare minimum to learn X
 
 meaning gradients can be computed automatically as arithmetic operations are performed.
 
-Example:
+At the moment in this implementation the actual derivatives in backprop are formulated explicitly (see [TODO](#todo))
 
-```
--- x^2 - 4x, derivative should be 2x - 4
-f x = x ** 2 - 4 * x
--- `diff f 2` is `2`
+### `Dual` type
+
+```haskell
+data Dual a = Dual a a
+  deriving (Eq, Read, Show)
 ```
 
-At the moment in this implementation the actual derivatives are formulated explicitly (see [TODO](#todo))
+The `Dual` type holds two values of type `a`: The function's value and its derivative.
+
+### `Num` typeclass
+
+To enable arithmetic ops on dual numbers we create a typeclass instance of the `Num` typeclass for `Dual`.
+
+```haskell
+instance Num a => Num (Dual a) where
+  (Dual u u') + (Dual v v') = Dual (u + v) (u' + v')
+  (Dual u u') * (Dual v v') = Dual (u * v) (u' * v + u * v')
+  (Dual u u') - (Dual v v') = Dual (u - v) (u' - v')
+  abs (Dual u u') = Dual (abs u) (u' * signum u)
+  signum (Dual u u') = Dual (signum u) 0
+  fromInteger n = Dual (fromInteger n) 0
+```
+
+### Differentiation
+
+The `differentiate` function computes the derivative of a single-variable function.
+
+```haskell
+differentiate :: Num a => (Dual a -> Dual c) -> a -> c
+differentiate f x = getDualDerivative . f $ Dual x 1
+```
+
+Consider $f(x) = x^2 + 3x + 2$. To find its derivative at $x = 5$:
+
+```haskell
+f x = x ** 2 + 3*x + 2
+
+let result = differentiate f 5
+-- | `result` is 13
+```
+
 
 ## How to run
 
@@ -99,7 +130,7 @@ The code could use some love. I'm no Haskell expert.
 There might be bugs!
 
 
-### Contributing / License
+### Contributing
 
 You are free to do whatever you want with this. If you spot bugs, want to experiment and/or change stuff, etc. it might be best to fork the repo or just copy the code and change it on your own. I don't really have much time to review/accept PRs :)
 
@@ -107,3 +138,7 @@ You are free to do whatever you want with this. If you spot bugs, want to experi
 - [ ] Leverage `Dual` diff for derivatives instead of explicitly formulating them.
 - [ ] More complex nets/datasets (e.g. MNIST).
 - [ ] Viz
+
+### License
+
+MIT
