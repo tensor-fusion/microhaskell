@@ -74,10 +74,11 @@ differentiate f x = getDualDerivative . f $ Dual x 1
 Consider $f(x) = x^2 + 3x + 2$. To find its derivative at $x = 5$:
 
 ```haskell
-f x = x ** 2 + 3*x + 2
+f :: Num a => Dual a -> Dual a
+f x = x ^ 2 + 3 * x + 2
 
 let result = differentiate f 5
--- | `result` is 13
+-- | result is 13
 ```
 
 
