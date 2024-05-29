@@ -9,7 +9,7 @@ Everyone's seen something similar in python/numpy but trust me autodiff is way m
 
 <img src="./images/haskell.png" width="500px"></img>
 
-I named this microhaskell after karpathy's [micrograd](https://github.com/karpathy/micrograd).
+I named this `microhaskell` after karpathy's [micrograd](https://github.com/karpathy/micrograd).
 
 ## Overview
 
@@ -29,7 +29,7 @@ Modules:
 The neural net is the most basic FFN with just 2 layers (bare minimum to learn XOR).
 
 
-## Backprop Approach
+## Automatic differentiation approach
 
 ### Dual numbers
 
