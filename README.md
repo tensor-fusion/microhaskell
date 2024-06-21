@@ -88,7 +88,7 @@ You'll need to have Haskell and `cabal` installed:
 
 ### 1. Clone the repo
 ```
-git clone https://github.com/milton-l/microhaskell.git
+git clone https://github.com/tensor-fusion/microhaskell.git
 cd microhaskell
 ```
 
